@@ -10,15 +10,14 @@ if ((Get-MyComputerModel) -match 'Virtual') {
 #Make sure I have the latest OSD Content
 Write-Host  -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
 Install-Module OSD -Force
-Install-Module -Name Hyper-V.Tools -RequiredVersion 0.1.1
+
 
 Write-Host  -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
 Import-Module OSD -Force
-import-Module Hyper-V.Tools -Force
 
 #TODO: Spend the time to write a function to do this and put it here
 Write-Host  -ForegroundColor Cyan "Ejecting ISO"
-Get-VMDvdDrive -VMName "TEST01" | Set-VMDvdDrive -Path $null
+#Get-VMDvdDrive -VMName "TEST01" | Set-VMDvdDrive -Path $null
 #Dismount-DiskImage -ImagePath D:\ISO\zti\OSDCloud.iso
 Start-Sleep -Seconds 5
 
