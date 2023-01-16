@@ -16,8 +16,7 @@ Import-Module OSD -Force
 
 #TODO: Spend the time to write a function to do this and put it here
 Write-Host  -ForegroundColor Cyan "Ejecting ISO"
-Get-VMDvdDrive -VMName TEST01 | Set-VMDvdDrive -Path $null
-Write-Warning "Testing with HYper V"
+D:\ISO\zti\OSDCloud.iso
 #Start-Sleep -Seconds 5
 
 #Start OSDCloud ZTI the RIGHT way
@@ -26,8 +25,8 @@ Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 22H2 -OSEdition Pro -OSLanguage 
 
 #Anything I want  can go right here and I can change it at any time since it is in the Cloud!!!!!
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud PostAction ..."
-Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-Start-OOBEDeploy -CustomProfile https://raw.githubusercontent.com/roelr1/ZTI/main/OSDeploy.OOBEDeploy.json
+#Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+#Start-OOBEDeploy -CustomProfile https://raw.githubusercontent.com/roelr1/ZTI/main/OSDeploy.OOBEDeploy.json
 Write-Warning "This will take a while"
 
 #Restart from WinPE
