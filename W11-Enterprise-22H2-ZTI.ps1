@@ -16,8 +16,8 @@ Import-Module OSD -Force
 
 #TODO: Spend the time to write a function to do this and put it here
 Write-Host  -ForegroundColor Cyan "Ejecting ISO"
-D:\ISO\zti\OSDCloud.iso
-#Start-Sleep -Seconds 5
+Dismount-DiskImage -ImagePath D:\ISO\zti\OSDCloud.iso
+Start-Sleep -Seconds 5
 
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Start OSDCloud with MY Parameters"
