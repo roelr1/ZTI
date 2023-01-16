@@ -22,11 +22,12 @@ Write-Warning "Testing with HYper V"
 
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Start OSDCloud with MY Parameters"
-Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 22H2 -OSEdition Enterprise -OSLanguage en-us -OSLicense Volume -ZTI
+Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 22H2 -OSEdition Pro -OSLanguage en-us -OSLicense Retail -ZTI
 
 #Anything I want  can go right here and I can change it at any time since it is in the Cloud!!!!!
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud PostAction ..."
-Start-OOBEDeploy
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+Start-OOBEDeploy -CustomProfile https://raw.githubusercontent.com/roelr1/ZTI/main/OSDeploy.OOBEDeploy.json
 Write-Warning "This will take a while"
 
 #Restart from WinPE
