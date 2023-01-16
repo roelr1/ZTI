@@ -25,16 +25,9 @@ Write-Host  -ForegroundColor Cyan "Start OSDCloud with MY Parameters"
 Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 22H2 -OSEdition Pro -OSLanguage en-us -OSLicense Retail -ZTI
 
 #Anything I want  can go right here and I can change it at any time since it is in the Cloud!!!!!
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud PostAction ..."
+#Write-Host  -ForegroundColor Cyan "Starting OSDCloud PostAction ..."
 
-If (!(Test-Path "C:\ProgramData\OSDeploy")) {
-    New-Item "C:\ProgramData\OSDeploy" -ItemType Directory -Force | Out-Null
-}
-$Uri = https://github.com/roelr1/ZTI/blob/main/OSDeploy.OOBEDeploy.json
-irm $Uri | iex| Out-File -FilePath "C:\ProgramData\OSDeploy\OSDeploy.OOBEDeploy.json" -Encoding ascii -Force
-
-Start-OOBEDeploy
-Write-Warning "This will take a while"
+#Write-Warning "This will take a while"
 
 #Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Restarting in 20 seconds!"
