@@ -30,7 +30,7 @@ Write-Host  -ForegroundColor Cyan "Starting OSDCloud PostAction ..."
 If (!(Test-Path "C:\ProgramData\OSDeploy")) {
     New-Item "C:\ProgramData\OSDeploy" -ItemType Directory -Force | Out-Null
 }
-$Uri = 
+$Uri = https://github.com/roelr1/ZTI/blob/main/OSDeploy.OOBEDeploy.json
 irm $Uri | iex| Out-File -FilePath "C:\ProgramData\OSDeploy\OSDeploy.OOBEDeploy.json" -Encoding ascii -Force
 
 Start-OOBEDeploy
