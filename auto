@@ -1,0 +1,4 @@
+Set-ExecutionPolicy -ExecutionPolicy Bypass
+Install-Script -Name Get-WindowsAutoPilotInfo -Force
+Get-WindowsAutoPilotInfo -Online
+
